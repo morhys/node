@@ -1,0 +1,3 @@
+-Using node's standard libraries `http` and `fs` and built-in JSON support.
+-Read in a comma-seprated file of key-value pairs.
+-HTTP server which returns the file's contents as JSON.
