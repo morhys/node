@@ -35,6 +35,25 @@ app.get('/', function(request, response) {
     });
 });
 
+// Posts API
+app.get('/posts.json', function(request, response) {
+    Post.find(function(err, posts) {
+        if (err) {
+            response.send(500, {
+                success: false
+            });
+        }
+        else {
+            response.send({
+                success: true,
+                posts: posts
+            })
+        }
+    });
+});
+
+
+
 var auth = express.basicAuth(function(username, password){
     return username == 'admin' && password === 'password';
 });
